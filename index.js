@@ -184,7 +184,7 @@ app.post('/add-user', async (req, res) => {
   }
 });
 
-app.post('/get-msg-user', async (req, res) => {
+app.get('/get-msg-user', async (req, res) => {
   try {
     const users = User.find({});
     
