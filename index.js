@@ -184,6 +184,16 @@ app.post('/add-user', async (req, res) => {
   }
 });
 
+app.post('/get-msg-user', async (req, res) => {
+  try {
+    const users = User.find({});
+    
+    res.status(200).json({ message: 'User fetched successfully' , data : users });
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while adding the user' });
+  }
+});
+
 app.post('/signup-user', async (req, res) => {
   try {
     const { username, email, password } = req.body;
