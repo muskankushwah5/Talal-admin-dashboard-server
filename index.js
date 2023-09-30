@@ -162,7 +162,7 @@ app.get('/get-boxes', async (req, res) => {
 
     const updatedBoxes = boxes.map((boxItem) => ({
       ...boxItem,
-      img: `http://localhost:8000/uploads/${boxItem.img}`, // Update the image URL
+      img: `https://talal-admin-dashboard.onrender.com/uploads/${boxItem.img}`, // Update the image URL
     }));
 
 
