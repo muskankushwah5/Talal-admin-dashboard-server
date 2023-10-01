@@ -38,7 +38,7 @@ Connection(url);
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads/'); // Set the destination directory for uploaded files
+    cb(null, 'https://talal-admin-dashboard.onrender.com/uploads/'); // Set the destination directory for uploaded files
   },
   filename: (req, file, cb) => {
     // Generate a unique filename for the uploaded image
