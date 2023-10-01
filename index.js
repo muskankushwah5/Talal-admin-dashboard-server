@@ -126,7 +126,7 @@ app.put('/update-box/:id', upload.single('img'), async (req, res) => {
     if (req.file) {
       
       if (existingBox.img) {
-        fs.unlinkSync(`/uploads/${existingBox.img}`);
+        fs.unlinkSync(`https://talal-admin-dashboard.onrender.com/uploads/${existingBox.img}`);
       }
       imageData = req.file.filename;
       }
