@@ -8,6 +8,8 @@ import path from "path";
 
 import multer from "multer";
 
+import axios from 'axios';
+
 import Connection from "./connection/db.js";
 import { fileURLToPath } from "url";
 import box from "./Modal/Data..js";
@@ -102,6 +104,15 @@ app.post('/api/add-data-only',  async (req, res) => {
   }
   });
 
+const deleteRemoteFile = async (fileUrl) => {
+  try {
+    await axios.delete(fileUrl);
+    console.log('File deleted successfully');
+  } catch (error) {
+    console.error('Error deleting file:', error);
+  }
+};
+
 app.put('/update-box/:id', upload.single('img'), async (req, res) => {
   const boxId = req.params.id;
 
@@ -126,7 +137,7 @@ app.put('/update-box/:id', upload.single('img'), async (req, res) => {
     if (req.file) {
       
       if (existingBox.img) {
-        fs.unlinkSync(`https://talal-admin-dashboard.onrender.com/uploads/${existingBox.img}`);
+        deleteRemoteFile(`https://talal-admin-dashboard.onrender.com/uploads/${existingBox.img}`);
       }
       imageData = req.file.filename;
       }
