@@ -190,7 +190,7 @@ app.get('/get-msg-user', async (req, res) => {
     
     res.status(200).json({ message: 'User fetched successfully' , data : users });
   } catch (error) {
-    res.status(500).json({ error: 'An error occurred while adding the user' });
+    res.status(500).json({ error: error.message });
   }
 });
 
