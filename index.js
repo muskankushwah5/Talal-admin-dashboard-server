@@ -136,9 +136,9 @@ app.put('/update-box/:id', upload.single('img'), async (req, res) => {
 
     if (req.file) {
       
-      if (existingBox.img) {
-        deleteRemoteFile(`https://talal-admin-dashboard.onrender.com/uploads/${existingBox.img}`);
-      }
+      // if (existingBox.img) {
+      //   deleteRemoteFile(`https://talal-admin-dashboard.onrender.com/uploads/${existingBox.img}`);
+      // }
       imageData = req.file.filename;
       }
 
