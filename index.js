@@ -186,7 +186,7 @@ app.post('/add-user', async (req, res) => {
 
 app.get('/get-msg-user', async (req, res) => {
   try {
-    const users = User.find({});
+    const users = await User.find({});
     
     res.status(200).json({ message: 'User fetched successfully' , data : users });
   } catch (error) {
